@@ -1,14 +1,16 @@
 <html>
 <p>
 Hello World!
-<button>Scan</button>
+<button id="scanbtn">Scan</button>
 </p>
 <script>
-button.addEventListener('pointerup' function(event) {
-  let options = {};
-  options.acceptAllDevices = true;
-  navigator.bluetooth.requestDevice(options)
-    .then(device => {log('Name: ' + device.name);
+scanbtn.addEventListener('pointerup' function(event) {
+  navigator.bluetooth.requestDevice({
+  filters: [{
+    services: ['713d0000-1000-0000-000000210461']
+  }]
+})
+    .then(device => {console.log('Name: ' + device.name);
 }
 </script>
 </html>
