@@ -2,48 +2,17 @@
   <body>
     <img class="pageIcon" src="icon.png">
     <h1>Matt is Cool</h1>
-
-<form>
   <button>Get Bluetooth Device Info</button>
-</form>
-    
+
 <script>
-  function onButtonClick() {
+  button.addEventListener('pointerup',function(event) {
   navigator.bluetooth.requestDevice({
   filters: [{
     services: ['713d0000-1000-0000-0000-000000210461']
   }]
-  .then(device => {
-    log('> Name:             ' + device.name);
+})
+.then(device => {console.log(device.name}) 
   });
-}
-    </script>
-
-
-<script>
-  document.querySelector('form').addEventListener('submit', function(event) {
-    event.stopPropagation();
-    event.preventDefault();
-
-    if (isWebBluetoothEnabled()) {
-      ChromeSamples.clearLog();
-      onButtonClick();
-    }
-  });
-</script>
-
-<script>
-  log = ChromeSamples.log;
-
-  function isWebBluetoothEnabled() {
-    if (navigator.bluetooth) {
-      return true;
-    } else {
-      ChromeSamples.setStatus('Web Bluetooth API is not available.\n' +
-          'Please make sure the "Experimental Web Platform features" flag is enabled.');
-      return false;
-    }
-  }
 </script>
   </body>
 </html>
