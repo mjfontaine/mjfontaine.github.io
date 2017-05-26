@@ -4,13 +4,11 @@ Hello World!
 <button>Scan</button>
 </p>
 <script>
-function onButtonClick() {
+button.addEventListener('pointerup' function(event) {
   let options = {};
   options.acceptAllDevices = true;
- 
-
-navigator.bluetooth.requestDevice(options)
-.then(device => {log('Name:	' + device.name);
+  navigator.bluetooth.requestDevice(options)
+    .then(device => {log('Name: ' + device.name);
 }
 </script>
 </html>
