@@ -1,10 +1,10 @@
 <html>
 <p>
 Hello World!
-<button id="scanbtn">Scan</button>
+<button>Scan</button>
 </p>
 <script>
-scanbtn.addEventListener('pointerup' function(event) {
+function onButtonClick() {
   navigator.bluetooth.requestDevice({
   filters: [{
     services: ['713d0000-1000-0000-000000210461']
