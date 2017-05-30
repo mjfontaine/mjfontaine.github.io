@@ -1,18 +1,17 @@
 <html>
   <body>
     <h1>Matt is Cool</h1>
-  <button>Get Bluetooth Device Info</button>
+  <button id="connect" onclick="onBtnClick()">Connect</button>
 
 <script>
-  button.addEventListener('pointerup',function(event) {
+  function onBtnClick(){
   navigator.bluetooth.requestDevice({
   filters: [{
     services: ['713d0000-1000-0000-0000-000000210461']
   }]
 })
-.then(device => {console.log(device.name}) 
-  });
-}
+.then(device => {console.log(device.name)});
+  }
 </script>
-  </body>
+</body>
 </html>
